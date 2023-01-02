@@ -5,4 +5,6 @@ from . import views
 
 urlpatterns =[
     path('', views.endpoint, name='endpoint'),
+    path('users/', views.users, name='users'),
+    # path('users/', views.users, name='users'),
 ]
