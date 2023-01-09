@@ -24,3 +24,22 @@ class Company(models.Model):
 
     def __str__(self):
         return self.companyname
+    
+
+
+
+class Products(models.Model):
+    name=models.CharField(max_length=250)
+    # image = models.ImageField(default='default.png', upload_to='profile_pics')
+    mens = 'mens'
+    ladies = 'ladies'
+    children = 'children'
+    other = 'other'
+    category_choices = [(mens, 'mens'), (ladies, 'ladies'),(children, 'children'),(other, 'other')]
+    category =models.CharField(max_length=10, choices=category_choices, default=other)
+    description = models.TextField(max_length=5000)
+    price=models.DecimalField(max_digits=100000, decimal_places=2)
+
+
+    def __str__(self):
+        return self.name
